@@ -7,7 +7,7 @@ const app = new Vue(
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: '_1',
+                    avatar: '_1',     // img_2/avatar_1.jpg
                     visible: true,
                     messages: [
                         {
@@ -181,6 +181,15 @@ const app = new Vue(
 )
 
 
+
+ const avatar = '_1';     // img_2/avatar_1.jpg
+
+function imgAvatar(numeroConTrattinoBasso){
+    
+return "img_2/avatar" + numeroConTrattinoBasso + ".jpg"
+
+}
+console.log(imgAvatar(avatar))
 
 
 

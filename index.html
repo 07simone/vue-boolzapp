@@ -33,7 +33,7 @@
                             <a class="navbar-brand"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
                             </form>
                     </nav> 
-                    <div class="notifiche p-3 mb-2 bg-info">
+                    <div class="notifiche bg-info">
                         <i class="fa-solid fa-bell-slash "></i>
                         <h4>ricevi notifiche di nuovi messaggi</h4>
                         <a class="testo" href="#">Attiva notifiche desktop</a>
@@ -42,10 +42,10 @@
                         <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat"  > 
                     </div>
                     <div class="list">
-                        <ul>
+                        <ul >
                             <li  v-for="(elemento, index) in contacts" class="list-group-item">
-                                {{elemento.name}} 
-                            </li >
+                                <img :src="'img_2/avatar' + elemento.avatar + '.jpg'" alt="">  {{elemento.name}}  
+                            </li>
                         </ul>
                     </div>
                 </div> 
