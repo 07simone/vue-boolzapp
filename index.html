@@ -22,39 +22,66 @@
 </head>
 <body>
     <main id="app">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-5"  >
+                <div class="col-5">
                     <nav class="navbar navbar-light bg-light">
-                            <h3>sofia</h3>
+                            <h3 class="fs-6">sofia</h3>
                             <form class="d-flex">
                             <a class="navbar-brand"> <i class="fa-solid fa-message"></i> </a>
                             <a class="navbar-brand"> <i class="fa-solid fa-circle-notch"></i></a>
                             <a class="navbar-brand"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
                             </form>
                     </nav> 
-                    <div class="notifiche p-3 mb-2 bg-info" >
-                        <i class="fa-solid fa-bell-slash d-flex justify-content-between"></i>
+                    <div class="notifiche p-3 mb-2 bg-info">
+                        <i class="fa-solid fa-bell-slash "></i>
                         <h4>ricevi notifiche di nuovi messaggi</h4>
                         <a class="testo" href="#">Attiva notifiche desktop</a>
                     </div>
                     <div class="input">
-                        <input type="text" v-model="contenuto" class="form-control me-4" placeholder="cerca o inizia una nuova chat"  >
-                        
+                        <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat"  > 
                     </div>
-                </div>
+                    <div class="list">
+                        <ul>
+                            <li  v-for="(elemento, index) in contacts" class="list-group-item">
+                                {{elemento.name}} 
+                            </li >
+                        </ul>
+                    </div>
+                </div> 
+                
+        
+            
                 <div class="col-7">
-                    <nav class="navbar navbar-light bg-light">
-                        <h3>michele</h3>
-                        <form class="d-flex">
-                        <a class="navbar-brand"> <i class="fa-solid fa-magnifying-glass"></i> </a>
-                        <a class="navbar-brand"> <i class="fa-solid fa-paperclip"></i></a>
-                        <a class="navbar-brand"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
-                        </form>
-                </nav> 
+                    <section class="top-navbar">
+                        <nav class="navbar navbar-light bg-light" >
+                            <h3 class="fs-6">michele</h3>
+                            
+                            <form class="d-flex">
+                            <a class="navbar-brand"> <i class="fa-solid fa-magnifying-glass"></i> </a>
+                            <a class="navbar-brand"> <i class="fa-solid fa-paperclip"></i></a>
+                            <a class="navbar-brand"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
+                            </form>
+                        </nav> 
+                    </section>
+                    <section class="chat">
+
+                    </section>
+                    <section class="bottom-nav"> 
+                        <nav class="navbar navbar-light bg-light">
+                            <i class="fa-solid fa-face-smile"></i>
+                            <div class="input">
+                                <input type="text" class="form-control"  placeholder="Scrivi un messaggio">
+                            </div>
+                            <i class="fa-solid fa-microphone"></i>
+                        </nav>  
+                    </section>
+                    
                 </div>
             </div>
         </div>
+                
+        
     </main>
 
     <script text="main/javascript" src="js/main.js"></script>
