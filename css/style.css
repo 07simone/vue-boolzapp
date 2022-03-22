@@ -1,20 +1,68 @@
-.testo{
+  .testo{
     color: grey;
 }
 
 .chat{
     background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--WAKqnINn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/tw0nawnvo0zpgm5nx4fp.png");
-    height: calc(100vh - 112px);
+    height: calc(100vh - 150px); 
 }
 
-.notifiche i{
+.notifiche i{  
     border-radius: 50px;
     background-color: white;
 
 }
+/* .fa-bell-slash{
+    width: 50px;
+    height: 50px;
+}
+ */
 
-.list img{
+/* .list img{
     width: 50px;
     border-radius: 50px;
     background-color: white;
+}   */
+.notifiche {  
+    height: 80px;
+}
+.header{
+    height: 75px;
+    background-color: rgb(226, 215, 215);
+}
+
+main::after{
+    clear: both;
+    display: table;
+    content: "";
+}
+div.contanier{
+    width: 80%;
+    min-width: 900px;
+}
+div.contenitore-sinistra{
+    float: left;
+    width: 30%;
+    height: 70vh;
+    background-color: aqua;
+}
+div.contenitore-destra{
+    float: left;
+    width: 70%;
+    height:70vh;
+    background-color: blue;
+}
+
+.input{
+    background-color: rgb(226, 215, 215);
+    height: 45px;
+}
+
+.avatar{
+    width: 65px;
+    height: 65px;
+}
+
+.contatti{
+    height: calc(100% - 200px);
 }

@@ -21,66 +21,97 @@
     <title>Vue Boolzapp</title>
 </head>
 <body>
-    <main id="app">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-5">
-                    <nav class="navbar navbar-light bg-light">
-                            <h3 class="fs-6">sofia</h3>
-                            <form class="d-flex">
-                            <a class="navbar-brand"> <i class="fa-solid fa-message"></i> </a>
-                            <a class="navbar-brand"> <i class="fa-solid fa-circle-notch"></i></a>
-                            <a class="navbar-brand"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
-                            </form>
-                    </nav> 
-                    <div class="notifiche bg-info">
-                        <i class="fa-solid fa-bell-slash "></i>
-                        <h4>ricevi notifiche di nuovi messaggi</h4>
-                        <a class="testo" href="#">Attiva notifiche desktop</a>
-                    </div>
-                    <div class="input">
-                        <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat"  > 
-                    </div>
-                    <div class="list">
-                        <ul >
-                            <li  v-for="(elemento, index) in contacts" class="list-group-item">
-                                <img :src="'img_2/avatar' + elemento.avatar + '.jpg'" alt="">  {{elemento.name}}  
-                            </li>
-                        </ul>
-                    </div>
-                </div> 
-                
+    <main id="app" class="conteiner p-4">
+        <div class="contenitore-sinistra">
         
-            
-                <div class="col-7">
-                    <section class="top-navbar">
-                        <nav class="navbar navbar-light bg-light" >
-                            <h3 class="fs-6">michele</h3>
-                            
-                            <form class="d-flex">
-                            <a class="navbar-brand"> <i class="fa-solid fa-magnifying-glass"></i> </a>
-                            <a class="navbar-brand"> <i class="fa-solid fa-paperclip"></i></a>
-                            <a class="navbar-brand"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
-                            </form>
-                        </nav> 
-                    </section>
-                    <section class="chat">
-
-                    </section>
-                    <section class="bottom-nav"> 
-                        <nav class="navbar navbar-light bg-light">
-                            <i class="fa-solid fa-face-smile"></i>
-                            <div class="input">
-                                <input type="text" class="form-control"  placeholder="Scrivi un messaggio">
-                            </div>
-                            <i class="fa-solid fa-microphone"></i>
-                        </nav>  
-                    </section>
+                <div class=" header p-3 d-flex align-content-center justify-content-between">
+                    <div class="h-100 d-flex align-items-center">
+                        <img class="h-100 rounded-circle" src="img_2/avatar_io.jpg" alt="">
+                        <h3 class="fs-6 m-0 ms-2">Sofia</h3>
+                    </div>
+                        
+                    <form class="d-flex">
+                        <a class="navbar-brand"> <i class="fa-solid fa-message"></i> </a>
+                        <a class="navbar-brand"> <i class="fa-solid fa-circle-notch"></i></a>
+                        <a class="navbar-brand"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
+                    </form>
+                </div>
+                    
+                
+                <div class="notifiche bg-info p-3 d-flex align-items-center">
+                    <i class="fa-solid fa-bell-slash"></i>
+                    <h4>ricevi notifiche di nuovi messaggi</h4>
                     
                 </div>
-            </div>
-        </div>
+            <div class="input p-1">
+                    <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat"  > 
+                </div>
+                <div class="list ">
+                    <div class="contatti">
+                        <li v-for="(elemento, index) in contacts" class="list-group-item m-0">
+                            <div class="avatar">
+                                <img class="h-100 rounded-circle" :src="'img_2/avatar' + elemento.avatar + '.jpg'" alt=""> 
+                            </div>
+                            <div class="name m-0">
+                                {{elemento.name}}
+                            <p class="text-secondary">ultimo messaggio inviato</p>  
+                            </div>
+                            
+                        </li>
+                    </div>
+        
+                </div>    
+                    
+        
+    </div>
+                <div class="contenitore-destra">
+            
+                        <section class="top-navbar">
+                            <div class=" header p-3 d-flex align-content-center justify-content-between">
+                                <div class="h-100 d-flex align-items-center">
+                                    <img class="h-100 rounded-circle" src="img_2/avatar_io.jpg" alt="">
+                                    <h3 class="fs-6 m-0 ms-2">Michele</h3>
+                                </div>
+                                    
+                                <form class="d-flex">
+                                    <a class="navbar-brand"> <i class="fa-solid fa-search"></i> </a>
+                                    <a class="navbar-brand"> <i class="fa-solid fa-paperclip"></i>
+                                    <a class="navbar-brand"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                </form>
+                            </div>
+                        </section>
+                        <section class="chat">
+    
+                        </section>
+                        <section class="bottom-nav"> 
+
+                            <!-- <div class=" header p-3 d-flex align-content-center justify-content-between">
+                                <div class="h-100 d-flex align-items-center">
+                                    <img class="h-100 rounded-circle" src="img_2/avatar_io.jpg" alt="">
+                                    <h3 class="fs-6 m-0 ms-2">Sofia</h3>
+                                </div>
+                                    
+                                <form class="d-flex">
+                                   
+                                </form>
+                            </div> -->
+                            <nav class="navbar navbar-light bg-light">
+                                <i class="fa-solid fa-face-smile"></i>
+                                <div class="input w-75 h-75">
+                                    <input type="text" class="form-control"  placeholder="Scrivi un messaggio">
+                                </div>
+                                <i class="fa-solid fa-microphone"></i>
+                            </nav>  
+                        </section>
+                                
+                    </div>
                 
+            
+                
+            
+                    
+        
+        
         
     </main>
 
