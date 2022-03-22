@@ -4,7 +4,7 @@
 
 .chat{
     background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--WAKqnINn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/tw0nawnvo0zpgm5nx4fp.png");
-    height: calc(100vh - 150px); 
+     height: calc(100% - 129px);  
 }
 
 .notifiche i{  
@@ -43,14 +43,14 @@ div.contanier{
 div.contenitore-sinistra{
     float: left;
     width: 30%;
-    height: 70vh;
+    height: 85vh;
     background-color: aqua;
 }
 div.contenitore-destra{
     float: left;
     width: 70%;
-    height:70vh;
-    background-color: blue;
+    height:85vh;
+    /* background-color: blue; */
 }
 
 .input{
@@ -63,6 +63,32 @@ div.contenitore-destra{
     height: 65px;
 }
 
-.contatti{
+.lista{
     height: calc(100% - 200px);
+    overflow: auto;
+}
+
+.contatti{
+    background-color: white;
+}
+
+.contatti.active{
+    background-color: rgb(135, 250, 135);
+}
+.contatti:hover{
+    background-color: rgb(243, 243, 35);
+}
+
+
+.chat{
+    display: none;
+}
+.chat.active{
+    display: block;
+}
+
+.text{
+    
+    width: 250px;
+    background-color: rgb(179, 255, 129);
 }

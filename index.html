@@ -43,34 +43,42 @@
                     <h4>ricevi notifiche di nuovi messaggi</h4>
                     
                 </div>
-            <div class="input p-1">
+                <div class="input p-1">
                     <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat"  > 
                 </div>
-                <div class="list ">
-                    <div class="contatti">
-                        <li v-for="(elemento, index) in contacts" class="list-group-item m-0">
-                            <div class="avatar">
-                                <img class="h-100 rounded-circle" :src="'img_2/avatar' + elemento.avatar + '.jpg'" alt=""> 
+                <div class="lista">
+                    <div class="contatti overflow-auto" >
+                        <ul v-for="(elemento, index) in contacts" class="list-group-item m-0" :class="(index == attivazioneChat) ? 
+                        'active' : '' " @click="cliccaChat(index)">
+                            
+                            <div class="avatar p-1 me-2 " >
+                                <img class="h-100 rounded-circle" :src="'img_2/avatar' + elemento.avatar + '.jpg'" alt="">  
                             </div>
-                            <div class="name m-0">
+                            <div class="name m-0 p-1" >
                                 {{elemento.name}}
-                            <p class="text-secondary">ultimo messaggio inviato</p>  
+                                <p class="text-secondary">ultimo messaggio inviato</p>  
                             </div>
                             
-                        </li>
-                    </div>
+                        </ul>
+                    </div> 
         
-                </div>    
+                </div>
+                            
                     
-        
-    </div>
+        </div>  
+       
+    
                 <div class="contenitore-destra">
             
                         <section class="top-navbar">
                             <div class=" header p-3 d-flex align-content-center justify-content-between">
                                 <div class="h-100 d-flex align-items-center">
-                                    <img class="h-100 rounded-circle" src="img_2/avatar_io.jpg" alt="">
-                                    <h3 class="fs-6 m-0 ms-2">Michele</h3>
+                                    <img class="h-100 rounded-circle" src="img_2/avatar_2.jpg" alt="">
+                                    <div class="ms-2" >
+                                        <h3 class="fs-6 m-0 ">Michele</h3>
+                                        <p class="m-0">ultimo accesso ieri</p>
+                                    </div>
+                                
                                 </div>
                                     
                                 <form class="d-flex">
@@ -80,24 +88,17 @@
                                 </form>
                             </div>
                         </section>
-                        <section class="chat">
-    
+                        <section class="chat"  v-for="(contact, index) in contacts" :class="(index == attivazioneChat) ? 
+                            'active' : '' " >
+                            <div class="text p-3" v-for="(contactMessage,index) in contact.messages ">
+                                {{contactMessage.message }} 
+                            </div>
+                            
                         </section>
                         <section class="bottom-nav"> 
-
-                            <!-- <div class=" header p-3 d-flex align-content-center justify-content-between">
-                                <div class="h-100 d-flex align-items-center">
-                                    <img class="h-100 rounded-circle" src="img_2/avatar_io.jpg" alt="">
-                                    <h3 class="fs-6 m-0 ms-2">Sofia</h3>
-                                </div>
-                                    
-                                <form class="d-flex">
-                                   
-                                </form>
-                            </div> -->
                             <nav class="navbar navbar-light bg-light">
                                 <i class="fa-solid fa-face-smile"></i>
-                                <div class="input w-75 h-75">
+                                <div class="input w-75 h-75" >
                                     <input type="text" class="form-control"  placeholder="Scrivi un messaggio">
                                 </div>
                                 <i class="fa-solid fa-microphone"></i>

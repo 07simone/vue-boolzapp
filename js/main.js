@@ -1,9 +1,10 @@
-const app = new Vue(
+ const app = new Vue(
     {
         el: "#app",
 
         data:{
-            
+            newChat: "",
+            attivazioneChat: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -173,13 +174,21 @@ const app = new Vue(
             
         },
         methods: {
+            cliccaChat(indexChat){
+                this.attivazioneChat = indexChat
+            },
+            /* aggiungiChat(stringa){
+                this.newChat.push(stringa)
 
+                this.newChat= "";  
+                
+            }, */
             
         }
         
     }
 )
-
+ 
 
 /* 
 const avatar = '_1';     
