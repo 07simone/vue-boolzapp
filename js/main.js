@@ -3,7 +3,7 @@
         el: "#app",
 
         data:{
-           
+            risposta:"",
             newChat: "",
             attivazioneChat: 0,
             contacts: [
@@ -188,13 +188,15 @@
                 contacts[indice].messages.push(newMessage)
                 this.newChat=""
             }, 
-
+          
+            
         }
     }
 )
 
-
-
+setTimeout(() => {
+    aggiungiChat(stringa,indice,contacts)
+}, 2000);
 
 
 
