@@ -187,16 +187,24 @@
                 }
                 contacts[indice].messages.push(newMessage)
                 this.newChat=""
+
+                setTimeout(() => {
+                    const newRisposta={
+                        date: '',
+                        message: "si",
+                        
+                        status: 'received'
+                    }
+                    contacts[indice].messages.push(newRisposta)
+                    
+                }, 2000);
+
             }, 
-          
             
         }
     }
 )
 
-setTimeout(() => {
-    aggiungiChat(stringa,indice,contacts)
-}, 2000);
 
 
 
