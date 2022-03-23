@@ -3,7 +3,7 @@
         el: "#app",
 
         data:{
-            risposta:"",
+            
             newChat: "",
             attivazioneChat: 0,
             contacts: [
@@ -179,23 +179,22 @@
                 this.attivazioneChat = indexChat
             },
 
-            aggiungiChat(stringa,indice,contacts){
+            aggiungiChat(){
+                const destinatario = this.attivazioneChat
                 const newMessage ={
-                    date: '',
-                    message: stringa,
+                    message: this.newChat,
                     status: 'sent'
                 }
-                contacts[indice].messages.push(newMessage)
-                this.newChat=""
+                this.contacts[this.attivazioneChat].messages.push(newMessage)
+                this.newChat= ""
 
                 setTimeout(() => {
+                    
                     const newRisposta={
-                        date: '',
                         message: "si",
-                        
                         status: 'received'
                     }
-                    contacts[indice].messages.push(newRisposta)
+                    this.contacts[destinatario].messages.push(newRisposta)
                     
                 }, 2000);
 

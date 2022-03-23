@@ -17,6 +17,9 @@
 
     <!-- css-custom -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/customParseFormat.js"></script> -->
     
     <title>Vue Boolzapp</title>
 </head>
@@ -47,9 +50,9 @@
                     <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat"  > 
                 </div>
                 <div class="lista">
-                    <div class="contatti overflow-auto" >
-                        <ul v-for="(elemento, index) in contacts" class="list-group-item m-0" :class="(index == attivazioneChat) ? 
-                        'active' : '' " @click="cliccaChat(index)">
+                    <div class="contatti overflow-auto " >
+                        <ul v-for="(elemento, index) in contacts" class="list-group-item m-0 d-flex" :class="(index == attivazioneChat) ? 
+                        'active' : '' " @click="cliccaChat(index) " >
                             
                             <div class="avatar p-1 me-2 " >
                                 <img class="h-100 rounded-circle" :src="'img_2/avatar' + elemento.avatar + '.jpg'" alt="">  
@@ -58,6 +61,8 @@
                                 {{elemento.name}}
                                 <p class="text-secondary">ultimo messaggio inviato</p>  
                             </div>
+
+                            <p class="text-end"> 12:00</p>
                             
                         </ul>
                     </div> 
@@ -103,7 +108,7 @@
                                 <i class="fa-solid fa-face-smile"></i>
                                 <div class="input w-75 h-75" >
                                     <input v-model="newChat" type="text" class="form-control"  placeholder="Scrivi un messaggio"
-                                    @keyup.enter="(aggiungiChat(newChat,attivazioneChat,contacts ))">
+                                    @keyup.enter="(aggiungiChat())">
                                 </div>
                                 <i class="fa-solid fa-microphone"></i>
                             </nav>  
