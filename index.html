@@ -88,18 +88,22 @@
                                 </form>
                             </div>
                         </section>
-                        <section class="chat"  v-for="(contact, index) in contacts" :class="(index == attivazioneChat) ? 
-                            'active' : '' " >
-                            <div class="text p-3" v-for="(contactMessage,index) in contact.messages ">
-                                {{contactMessage.message }} 
+
+
+                        <section class="chat d-flex flex-column p-5 align-items-end">
+                            <div v-for="contactMessage in contacts[attivazioneChat].messages" class="messaggi p-2 mb-3 rounded-2 " 
+                            :class="(contactMessage.status == 'received') ? 'received' : 'sent' " >
+                                {{contactMessage.message}} 
                             </div>
-                            
+
+
                         </section>
                         <section class="bottom-nav"> 
                             <nav class="navbar navbar-light bg-light">
                                 <i class="fa-solid fa-face-smile"></i>
                                 <div class="input w-75 h-75" >
-                                    <input type="text" class="form-control"  placeholder="Scrivi un messaggio">
+                                    <input v-model="newChat" type="text" class="form-control"  placeholder="Scrivi un messaggio"
+                                    @keyup.enter="(aggiungiChat(newChat,attivazioneChat,contacts ))">
                                 </div>
                                 <i class="fa-solid fa-microphone"></i>
                             </nav>  

@@ -4,7 +4,7 @@
 
 .chat{
     background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--WAKqnINn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/tw0nawnvo0zpgm5nx4fp.png");
-     height: calc(100% - 129px);  
+    height: calc(100% - 129px);  
 }
 
 .notifiche i{  
@@ -12,17 +12,7 @@
     background-color: white;
 
 }
-/* .fa-bell-slash{
-    width: 50px;
-    height: 50px;
-}
- */
 
-/* .list img{
-    width: 50px;
-    border-radius: 50px;
-    background-color: white;
-}   */
 .notifiche {  
     height: 80px;
 }
@@ -44,7 +34,7 @@ div.contenitore-sinistra{
     float: left;
     width: 30%;
     height: 85vh;
-    background-color: aqua;
+  /*   background-color: aqua; */
 }
 div.contenitore-destra{
     float: left;
@@ -72,12 +62,12 @@ div.contenitore-destra{
     background-color: white;
 }
 
-.contatti.active{
+/* .contatti.active{
     background-color: rgb(135, 250, 135);
 }
 .contatti:hover{
     background-color: rgb(243, 243, 35);
-}
+} */
 
 
 .chat{
@@ -88,7 +78,16 @@ div.contenitore-destra{
 }
 
 .text{
-    
     width: 250px;
-    background-color: rgb(179, 255, 129);
+    background-color: white
+}
+
+.messaggi.sent{
+background-color: #d5f9ba;
+}
+
+.messaggi.received{
+    background-color: white;
+    align-self: start;
+    
 }

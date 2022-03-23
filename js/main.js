@@ -3,6 +3,7 @@
         el: "#app",
 
         data:{
+           
             newChat: "",
             attivazioneChat: 0,
             contacts: [
@@ -177,18 +178,25 @@
             cliccaChat(indexChat){
                 this.attivazioneChat = indexChat
             },
-            /* aggiungiChat(stringa){
-                this.newChat.push(stringa)
 
-                this.newChat= "";  
-                
-            }, */
-            
+            aggiungiChat(stringa,indice,contacts){
+                const newMessage ={
+                    date: '',
+                    message: stringa,
+                    status: 'sent'
+                }
+                contacts[indice].messages.push(newMessage)
+                this.newChat=""
+            }, 
+
         }
-        
     }
 )
- 
+
+
+
+
+
 
 /* 
 const avatar = '_1';     
