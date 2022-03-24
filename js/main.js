@@ -8,7 +8,7 @@
             attivazioneChat: 0,
             contacts: [
                 {
-                    name: 'Michele',
+                    name: 'Diletta',
                     avatar: '_1',     // img_2/avatar_1.jpg
                     visible: true,
                     messages: [
