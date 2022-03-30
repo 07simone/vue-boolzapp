@@ -47,12 +47,13 @@
                     
                 </div>
                 <div class="input p-1">
-                    <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat"  > 
+                    <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat" v-model="searchContacts" 
+                    @keyup="filterContacts(searchContacts)"> 
                 </div>
                 <div class="lista">
                     <div class="contatti overflow-auto " >
-                        <ul v-for="(elemento, index) in contacts" class="list-group-item m-0 d-flex" :class="(index == attivazioneChat) ? 
-                        'active' : '' " @click="cliccaChat(index) " >
+                        <ul v-for="(elemento, index) in contacts" class="list-group-item m-0 d-flex " :class="(index == attivazioneChat) ? 
+                        'active' : '' " @click="cliccaChat(index) " v-if="elemento.visible" >
                             
                             <div class="avatar p-1 me-2 " >
                                 <img class="h-100 rounded-circle" :src="'img_2/avatar' + elemento.avatar + '.jpg'" alt="">  
