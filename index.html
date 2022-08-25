@@ -29,8 +29,8 @@
         
                 <div class=" header p-3 d-flex align-content-center justify-content-between">
                     <div class="h-100 d-flex align-items-center">
-                        <img class="h-100 rounded-circle" src="img_2/avatar_io.jpg" alt="">
-                        <h3 class="fs-6 m-0 ms-2">Sofia</h3>
+                        <img class="h-100 rounded-circle" :src="'img_2/avatar' + contacts[attivazioneChat].avatar + '.jpg'" alt="">
+                        <h3 class="fs-6 m-0 ">{{contacts[attivazioneChat].name}}</h3>
                     </div>
                         
                     <form class="d-flex">
@@ -51,8 +51,8 @@
                 </div>
                 <div class="lista">
                     <div class="contatti overflow-auto " >
-                        <ul v-for="(elemento, index) in contacts" class="list-group-item m-0 d-flex" :class="(index == attivazioneChat) ? 
-                        'active' : '' " @click="cliccaChat(index) " >
+                        <ul v-for="(elemento,i) in contacts" class="list-group-item m-0 d-flex" :class="(i == attivazioneChat) ? 
+                        'active' : '' " @click="cliccaChat(i) " >
                             
                             <div class="avatar p-1 me-2 " >
                                 <img class="h-100 rounded-circle" :src="'img_2/avatar' + elemento.avatar + '.jpg'" alt="">  
@@ -78,9 +78,9 @@
                         <section class="top-navbar">
                             <div class=" header p-3 d-flex align-content-center justify-content-between">
                                 <div class="h-100 d-flex align-items-center">
-                                    <img class="h-100 rounded-circle" src="img_2/avatar_2.jpg" alt="">
-                                    <div class="ms-2" >
-                                        <h3 class="fs-6 m-0 ">Michele</h3>
+                                    <img class="h-100 rounded-circle" :src="'img_2/avatar' + contacts[attivazioneChat].avatar + '.jpg'" alt="">
+                                    <div class="ms-2"  >
+                                        <h3 class="fs-6 m-0 ">{{contacts[attivazioneChat].name}}</h3>
                                         <p class="m-0">ultimo accesso ieri</p>
                                     </div>
                                 
