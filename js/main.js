@@ -5,6 +5,7 @@
         data:{
             
             newChat: "",
+            searchContacts:"",
             attivazioneChat: 0,
             contacts: [
                 {
@@ -175,6 +176,22 @@
             
         },
         methods: {
+
+            //mi creo una funzione per la ricerca dei contatti; creo una constante per 
+            // la chiamata this, dopo di che mi richiamo la variabile contatti e con la 
+            // condizione dettata dall if li dico se è visibile allora dammi il nome incluso
+            // nella ricerca, altrimenti non mi dare la visibilità dagli altri
+            filterContacts(string){
+            const self = this
+            self.contacts.forEach(element => {
+                if(element.name.toLowerCase().includes(string.toLowerCase().trim())){
+                    element.visible = true
+                } else{
+                    element.visible = false
+                }
+            });
+            },
+
             cliccaChat(indexChat){
                 this.attivazioneChat = indexChat
             },
