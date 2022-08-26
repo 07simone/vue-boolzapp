@@ -48,7 +48,7 @@
                 </div>
                 <div class="input p-1">
                     <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat" v-model="searchContacts" 
-                    @keyup="filterContacts(searchContacts)"> 
+                    @keyup.enter="filterContacts(searchContacts)"> 
                 </div>
                 <div class="lista">
                     <div class="contatti overflow-auto " >

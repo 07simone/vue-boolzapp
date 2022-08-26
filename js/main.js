@@ -6,6 +6,7 @@
             
             newChat: "",
             searchContacts:"",
+            contactsNotFound :[],
             attivazioneChat: 0,
             contacts: [
                 {
@@ -182,12 +183,14 @@
             // condizione dettata dall if li dico se è visibile allora dammi il nome incluso
             // nella ricerca, altrimenti non mi dare la visibilità dagli altri
             filterContacts(string){
-            const self = this
+            const self = this;
+            self.contactsNotFound =[];
             self.contacts.forEach(element => {
-                if(element.name.toLowerCase().includes(string.toLowerCase().trim())){
-                    element.visible = true
+                if(contacts.name.toLowerCase().includes(string.toLowerCase().trim())){
+                    contacts.visible = true
                 } else{
-                    element.visible = false
+                    contacts.visible = false
+                    self.contactsNotFound.push(contact.name);
                 }
             });
             },
