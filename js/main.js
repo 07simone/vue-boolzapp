@@ -183,20 +183,16 @@
             // condizione dettata dall if li dico se è visibile allora dammi il nome incluso
             // nella ricerca, altrimenti non mi dare la visibilità dagli altri
             filterContacts(string){
-            const self = this;
-            self.contactsNotFound =[];
-            self.contacts.forEach(contact => {
-                if(contact.name.toLowerCase().includes(string.toLowerCase().trim())){
-                    contact.visible = true
-                } else{
-                    contact.visible = false
-                    self.contactsNotFound.push(contact.name);
-                    console.log(this.contactsNotFound);
+            this.contactsNotFound =[];
+            for(let i = 0; i < this.contacts.length; i++){
+                if(this.contacts[i].name.toLowerCase().includes(string.trim())){
+                    this.contacts[i].visible = true;
+                }else{
+                    this.contacts[i].visible = false;
+                    this.contactsNotFound.push(this.contacts.name)
                 }
-            });
-            
-            },
-            
+            }
+        },
 
 
             cliccaChat(indexChat){
