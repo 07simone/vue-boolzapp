@@ -15,6 +15,9 @@
 
 }
 
+.contactsNotFound, h6{
+    color: red;
+}
 .notifiche {  
     height: 80px;
 }

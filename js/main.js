@@ -185,15 +185,19 @@
             filterContacts(string){
             const self = this;
             self.contactsNotFound =[];
-            self.contacts.forEach(element => {
-                if(contacts.name.toLowerCase().includes(string.toLowerCase().trim())){
-                    contacts.visible = true
+            self.contacts.forEach(contact => {
+                if(contact.name.toLowerCase().includes(string.toLowerCase().trim())){
+                    contact.visible = true
                 } else{
-                    contacts.visible = false
+                    contact.visible = false
                     self.contactsNotFound.push(contact.name);
+                    console.log(this.contactsNotFound);
                 }
             });
+            
             },
+            
+
 
             cliccaChat(indexChat){
                 this.attivazioneChat = indexChat
@@ -219,6 +223,8 @@
                 }, 2000);
 
             }, 
+
+
             
         }
     

@@ -46,14 +46,15 @@
                     <h4>ricevi notifiche di nuovi messaggi</h4>
                     
                 </div>
-                <div class="input p-1">
+                <div class="input p-1" >
                     <input type="text"  class="form-control me-4" placeholder="cerca o inizia una nuova chat" v-model="searchContacts" 
                     @keyup.enter="filterContacts(searchContacts)"> 
                 </div>
+
                 <div class="lista">
                     <div class="contatti overflow-auto " >
                         <ul v-for="(elemento,i) in contacts" class="list-group-item m-0 d-flex" :class="(i == attivazioneChat) ? 
-                        'active' : '' " @click="cliccaChat(i) " >
+                        'active' : '' " @click="cliccaChat(i) " v-if="elemento.visible" >
                             
                             <div class="avatar p-1 me-2 " >
                                 <img class="h-100 rounded-circle" :src="'img_2/avatar' + elemento.avatar + '.jpg'" alt="">  
@@ -67,6 +68,10 @@
                             
                         </ul>
                     </div> 
+
+                    <div class="ContactsNotFound" v-if="contacts.length === contactsNotFound.length">
+                        <h6 >Non sono stati trovati contatti, hai scritto male.</h6>
+                    </div>
         
                 </div>
                             
